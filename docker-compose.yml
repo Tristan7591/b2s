@@ -4,7 +4,7 @@ services:
   backend:
     build: ./backend
     ports:
-      - "8000:8000"
+      - "0.0.0.0:8000:8000"
     depends_on:
       db:
         condition: service_healthy
@@ -17,16 +17,19 @@ services:
   frontend:
     build: ./frontend
     ports:
-      - "3000:3000"
+      - "0.0.0.0:3000:3000"
     volumes:
       - ./frontend:/app
       - /app/node_modules
     environment:
       - WDS_SOCKET_PORT=0
       - CHOKIDAR_USEPOLLING=true
+      - NODE_ENV=development
     depends_on:
       - backend
     restart: unless-stopped
+    tty: true
+    stdin_open: true
 
   db:
     image: postgres:latest
@@ -35,7 +38,7 @@ services:
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=b2s_db
     ports:
-      - "5432:5432"
+      - "0.0.0.0:5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:

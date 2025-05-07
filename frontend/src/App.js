@@ -6,7 +6,7 @@ function App() {
   const [users, setUsers] = useState([]);
   const [newUser, setNewUser] = useState({ username: '', email: '' });
 
-  const API_URL = 'http://localhost:8000';
+  const API_URL = 'http://0.0.0.0:8000';
 
   useEffect(() => {
     fetchUsers();
