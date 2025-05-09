@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import './App.css';
 
@@ -14,14 +14,14 @@ function ClientManager() {
 
   const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
-  const fetchUsers = async () => {
+  const fetchUsers = useCallback(async () => {
     try {
       const response = await axios.get(`${API_URL}/users/`);
       setUsers(response.data);
     } catch (error) {
       console.error('Error fetching users:', error);
     }
-  };
+  }, [API_URL]);
 
   useEffect(() => {
     fetchUsers();
