@@ -18,6 +18,9 @@ class User(Base):
     id = Column(Integer, primary_key=True, index=True)
     username = Column(String, unique=True, index=True)
     email = Column(String, unique=True, index=True)
+    telephone = Column(String, nullable=True)
+    company_name = Column(String, nullable=True)
+    extra_info = Column(String, nullable=True)
     is_active = Column(Boolean, default=True)
 
 # Create tables
@@ -27,11 +30,17 @@ Base.metadata.create_all(bind=engine)
 class UserCreate(BaseModel):
     username: str
     email: str
+    telephone: str = None
+    company_name: str = None
+    extra_info: str = None
 
 class UserResponse(BaseModel):
     id: int
     username: str
     email: str
+    telephone: str = None
+    company_name: str = None
+    extra_info: str = None
     is_active: bool
 
     class Config:
@@ -65,7 +74,13 @@ def read_root():
 
 @app.post("/users/", response_model=UserResponse)
 def create_user(user: UserCreate, db: Session = Depends(get_db)):
-    db_user = User(username=user.username, email=user.email)
+    db_user = User(
+        username=user.username,
+        email=user.email,
+        telephone=user.telephone,
+        company_name=user.company_name,
+        extra_info=user.extra_info
+    )
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
