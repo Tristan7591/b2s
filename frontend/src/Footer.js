@@ -10,9 +10,9 @@ function Footer() {
         <p>Tél : 01 23 45 67 89</p>
         <p>Email : <a href="mailto:contact@collabsync.fr">contact@collabsync.fr</a></p>
         <div className="footer-socials">
-          <a href="#" title="Twitter" className="footer-social-icon"><i className="fab fa-twitter"></i></a>
-          <a href="#" title="LinkedIn" className="footer-social-icon"><i className="fab fa-linkedin"></i></a>
-          <a href="#" title="GitHub" className="footer-social-icon"><i className="fab fa-github"></i></a>
+          <a href="https://twitter.com/" target="_blank" rel="noopener noreferrer" title="Twitter" className="footer-social-icon"><i className="fab fa-twitter"></i></a>
+          <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" title="LinkedIn" className="footer-social-icon"><i className="fab fa-linkedin"></i></a>
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" title="GitHub" className="footer-social-icon"><i className="fab fa-github"></i></a>
         </div>
       </div>
       <div className="footer-copyright">

@@ -2,7 +2,7 @@ import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import ClientManager from './ClientManager';
 import './App.css';
-import logo from '../public/collabsync-logo.png';
+const logo = '/collabsync-logo.png';
 import Footer from './Footer';
 import HomeCards from './HomeCards';
 

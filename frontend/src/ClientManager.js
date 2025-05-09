@@ -14,10 +14,6 @@ function ClientManager() {
 
   const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
-  useEffect(() => {
-    fetchUsers();
-  }, []);
-
   const fetchUsers = async () => {
     try {
       const response = await axios.get(`${API_URL}/users/`);
@@ -26,6 +22,11 @@ function ClientManager() {
       console.error('Error fetching users:', error);
     }
   };
+
+  useEffect(() => {
+    fetchUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleInputChange = (e) => {
     setNewUser({
