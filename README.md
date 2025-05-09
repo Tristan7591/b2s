@@ -1,9 +1,21 @@
-# B2S Application
+# CollabSync Cloud
 
-Une application de gestion d'utilisateurs avec une architecture B2S (Backend-to-Service) utilisant FastAPI, PostgreSQL et React.
+Portail cloud moderne et dynamique pour la réservation d'instances et de volumes, avec une expérience utilisateur premium, un design cloud/futuriste, et une équipe basée à Paris.
 
-## Structure du Projet
+## Aperçu visuel
+- **Logo CollabSync** intégré (header et page d'accueil)
+- **Page d'accueil dynamique** : nuages animés, cards offres cloud, bouton d'action, responsive
+- **Footer contact** : adresse à Paris, téléphone, email, réseaux sociaux
+- **Palette cloud** : dégradés bleu/violet, ombres, arrondis, animations
 
+## Fonctionnalités principales
+- Réservation d'instances et de volumes cloud (formulaire à venir)
+- Présentation des offres (instances rapides, stockage sécurisé, support 24/7)
+- Gestion des clients (ajout, suppression, affichage)
+- Interface responsive et animations modernes
+- Footer contact dynamique (Paris)
+
+## Structure du projet
 ```
 .
 ├── backend/
@@ -15,51 +27,29 @@ Une application de gestion d'utilisateurs avec une architecture B2S (Backend-to-
 │   ├── package.json
 │   └── src/
 │       ├── App.js
-│       └── App.css
-└── docker-compose.yml
+│       ├── App.css
+│       ├── ClientManager.js
+│       └── index.js
+├── docker-compose.yml
+└── cursor-roadmap.md
 ```
 
-## Prérequis
-
-- Docker
-- Docker Compose
-
-## Installation et Démarrage
-
-1. Clonez ce dépôt :
+## Démarrage rapide
 ```bash
 git clone <repository-url>
 cd <repository-name>
-```
-
-2. Démarrez l'application avec Docker Compose :
-```bash
 docker-compose up --build
 ```
-
-L'application sera accessible aux adresses suivantes :
 - Frontend : http://localhost:3000
 - Backend API : http://localhost:8000
-- Base de données PostgreSQL : localhost:5432
 
-## Fonctionnalités
+## Contact
+- Adresse : 42 Avenue des Champs-Élysées, 75008 Paris, France
+- Tél : 01 23 45 67 89
+- Email : contact@collabsync.fr
 
-- Création d'utilisateurs
-- Liste des utilisateurs
-- Suppression d'utilisateurs
-- Interface utilisateur moderne et responsive
+## Contribution
+Fork, branche, PR bienvenus !
 
-## API Endpoints
-
-- `GET /users/` - Liste tous les utilisateurs
-- `POST /users/` - Crée un nouvel utilisateur
-- `GET /users/{user_id}` - Récupère un utilisateur spécifique
-- `DELETE /users/{user_id}` - Supprime un utilisateur
-
-## Configuration de la Base de Données
-
-La base de données PostgreSQL est configurée avec les paramètres suivants :
-- Utilisateur : postgres
-- Mot de passe : postgres
-- Base de données : b2s_db
-- Port : 5432 
+## Licence
+MIT 

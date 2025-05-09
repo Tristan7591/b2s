@@ -1,0 +1,61 @@
+.home-cards {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin: 36px 0 0 0;
+  flex-wrap: wrap;
+}
+.cloud-card {
+  background: linear-gradient(120deg, #fafdff 60%, #e0e7ff 100%);
+  border-radius: 22px;
+  box-shadow: 0 4px 24px rgba(58,123,213,0.10);
+  padding: 32px 28px 24px 28px;
+  min-width: 240px;
+  max-width: 320px;
+  text-align: center;
+  transition: transform 0.18s, box-shadow 0.18s;
+  animation: cardPop 0.7s cubic-bezier(.68,-0.55,.27,1.55) both;
+  opacity: 0.97;
+}
+.cloud-card:hover {
+  transform: translateY(-8px) scale(1.04) rotate(-1deg);
+  box-shadow: 0 8px 32px rgba(58,123,213,0.18);
+  opacity: 1;
+}
+.card-icon {
+  font-size: 2.5rem;
+  color: #3a7bd5;
+  margin-bottom: 14px;
+  filter: drop-shadow(0 2px 8px #6a11cb33);
+  transition: color 0.2s, transform 0.2s;
+}
+.cloud-card:hover .card-icon {
+  color: #6a11cb;
+  transform: scale(1.15) rotate(8deg);
+}
+.cloud-card h4 {
+  font-size: 1.25rem;
+  color: #222;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.cloud-card p {
+  color: #666;
+  font-size: 1.05rem;
+  margin: 0;
+}
+@keyframes cardPop {
+  0% { opacity: 0; transform: scale(0.7) translateY(40px); }
+  100% { opacity: 0.97; transform: scale(1) translateY(0); }
+}
+@media (max-width: 900px) {
+  .home-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .cloud-card {
+    min-width: 90vw;
+    max-width: 98vw;
+  }
+} 
