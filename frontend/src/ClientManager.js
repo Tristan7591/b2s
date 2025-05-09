@@ -25,8 +25,7 @@ function ClientManager() {
 
   useEffect(() => {
     fetchUsers();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [fetchUsers]);
 
   const handleInputChange = (e) => {
     setNewUser({

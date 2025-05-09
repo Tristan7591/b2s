@@ -2,9 +2,9 @@ import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import ClientManager from './ClientManager';
 import './App.css';
-const logo = '/collabsync-logo.png';
 import Footer from './Footer';
 import HomeCards from './HomeCards';
+const logo = '/collabsync-logo.png';
 
 function HomePage() {
   return (
